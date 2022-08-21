@@ -7,20 +7,17 @@ const Products = () => {
     {name:"P3",price:"1200"}];
     console.log(arr);
   return (
-<>
-   {arr.map((item)=>{
-    
-   <div>
+  <div>
    <list>
         <ul>
-            <li>
-               return {item}
-            </li>
+        {arr.map((item)=>{
+         return <li>{arr}</li>
+        })}
         </ul>
     </list>
     </div>
-})}
-</>
+
+
    
   )
 }

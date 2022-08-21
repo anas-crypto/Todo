@@ -6,9 +6,12 @@ const Todo = () => {
   let list_arr=['p1','p2'];
   
   
-  //useEffect(()=>{
-   // localStorage.getItem("todo",data);
-  //},[])
+  useEffect(()=>{
+    if(localStorage.getItem('todo',data) !== null){
+      localStorage.getItem("todo",data);
+    }
+   
+  },[])
    
 
   const [data, setData] = useState([]);
@@ -21,12 +24,15 @@ const Todo = () => {
       })
    
     function handleSubmit(values) {
-
+      if(localStorage.getItem('todo',data) !== null){
+        localStorage.setItem("todo",data);
+      }
         list_arr.push(values.todo);
-        setData={list_arr};
-        localStorage.setItem('todo',data);
+        setData(list_arr)
+       
         
-        console.log(data);
+        
+        console.log(list_arr);
         
       }
      

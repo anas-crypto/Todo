@@ -4,12 +4,14 @@ import { useState, useEffect } from 'react'
 
 const Todo = () => {
   let list_arr=['p1','p2'];
-  useEffect(()=>{
-    localStorage.getItem=(data);
-  },[])
-    const [data, setData] = useState([]);
+  
+  
+  //useEffect(()=>{
+   // localStorage.getItem("todo",data);
+  //},[])
+   
 
-    
+  const [data, setData] = useState([]);
     const initialValues = {
         todo:'',
     }
@@ -19,9 +21,10 @@ const Todo = () => {
       })
    
     function handleSubmit(values) {
-        list_arr.push=(values.todo);
+
+        list_arr.push(values.todo);
         setData={list_arr};
-        localStorage.setItem=(data);
+        localStorage.setItem('todo',data);
         
         console.log(data);
         
@@ -32,7 +35,7 @@ const Todo = () => {
     <div>
       <list>
         <ol>
-        {data.map(()=>{
+        {data.map((item)=>{
          return <li>{data}</li>
         })}
           

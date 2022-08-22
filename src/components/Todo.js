@@ -3,18 +3,18 @@ import { Formik, useFormik } from 'formik'
 import { useState, useEffect } from 'react'
 
 const Todo = () => {
-  let list_arr=['p1','p2'];
+  let list_arr=[];
   
-  
+  const [data, setData] = useState([]);
   useEffect(()=>{
-    if(localStorage.getItem('todo',data) !== null){
-      localStorage.getItem("todo",data);
+    if(localStorage.getItem('todo',data).split(',') !== null){
+      localStorage.setItem('todo',data)
     }
    
   },[])
    
 
-  const [data, setData] = useState([]);
+  
     const initialValues = {
         todo:'',
     }
@@ -24,13 +24,15 @@ const Todo = () => {
       })
    
     function handleSubmit(values) {
-      if(localStorage.getItem('todo',data) !== null){
+      if(localStorage.getItem('todo',data).split(',') !== null){
         localStorage.setItem("todo",data);
-      }
         list_arr.push(values.todo);
         setData(list_arr)
-       
+      }
+      
         
+       
+      
         
         console.log(list_arr);
         

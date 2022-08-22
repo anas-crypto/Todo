@@ -11,7 +11,7 @@ const Products = () => {
    <list>
         <ul>
         {arr.map((item)=>{
-         return <li>{arr}</li>
+         return <li>{item.name}</li>
         })}
         </ul>
     </list>
